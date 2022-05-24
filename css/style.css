@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+header {
+    height: 60px;
+    width: calc(100% - 200px);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.aside {
+    height: calc( 100vh - 60px);
+    width: 200px;
+    background-color: black;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-shrink: 0;
+}
