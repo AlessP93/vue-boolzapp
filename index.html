@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="app" class="container">
         <div class="aside">
             <!-- sezione my id -->
             <div class="my-user">
@@ -49,20 +49,20 @@
             <!-- /sezione ricerca chat -->
             <!-- sezione utenti -->
             <div class="users">
-                <div class="single-user">
-                    <div class="my-user-icon"><img src="img/avatar_io.jpg"></div>
-                    <div class="name-friends">
-                        <div>Sofia</div>
-                        <small>ultimo messaggio inviato</small>
-                    </div>
-                    <small class="time">12:00</small>
+                <div class="contacts">
+                    <ul class="name-friends">
+                        <li v-for="contact in contacts">
+                            <div class="my-user-icon"><img :src="`img/avatar${contact.avatar}.jpg`"></div>
+                            <div>{{contact.name}}</div>
+                            <small>ultimo messaggio inviato</small>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
             <!-- /sezione utenti -->
         </div>
-         <!-- sezione chat utente -->
-        <section>
+        <div class="list-chat-users">
+            <!-- sezione chat utente -->
             <div class="header">
                 <div class="my-user-icon"><img src="img/avatar_1.jpg"></div>
                 <div class="name-friends">
@@ -74,21 +74,20 @@
                     <button><i class="fa-solid fa-paperclip"></i></button>
                     <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
                 </div>
-            </div> <!-- /sezione chat utenti -->
-             <!-- sezione messaggi -->
+            </div> 
+            <!-- /sezione chat utenti -->
+            <!-- sezione messaggi -->
             <div class="main">
                 <div>Hai portato il cane a spasso ?</div>
                 <div>Ricordati di stendere i panni</div>
             </div>
-        
-        
             <!-- /sezione messaggi -->
             <div class="footer">
-                <button><i class="fa-solid fa-face-smile"></i></button>
-                <button><i class="fa-solid fa-face-smile"></i></button>
-                <button><i class="fa-solid fa-face-smile"></i></button>
+                <button><i class="fa-regular fa-face-smile"></i></button>
+                <input class="nav-bar" type="text" placeholder="Scrivi un messaggio">
+                <button><i class="fa-solid fa-microphone"></i></button>
             </div>
-       </section>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/contacts.js"></script>
