@@ -52,7 +52,6 @@
                 <div class="contacts">
                     <ul class="name-friends">
                         <li class="img-list" v-for="contact in contacts">
-
                             <div class="img-list-left">
                                 <img :src="`img/avatar${contact.avatar}.jpg`">
                                 <div>
@@ -60,8 +59,8 @@
                                     <small>ultimo messaggio inviato</small>
                                 </div>
                             </div>
-                            <div>
-                                <small class="time">12.00</small>
+                            <div class="time">
+                                <small>12.00</small>
                             </div>
                         </li>
                     </ul>
@@ -72,9 +71,9 @@
         <div class="list-chat-users">
             <!-- sezione chat utente -->
             <div class="header">
-                <div class="my-user-icon"><img :src="`img/avatar$[currentIndex].jpg`"></div>
+                <div class="my-user-icon"><img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`"></div>
                 <div class="name-friends">
-                    <div>  </div>
+                    <div>{{contacts[currentIndex].name}}</div>
                     <small>ultimo messaggio oggi alle 12:00</small>
                 </div>
                 <div class="icons">
@@ -85,9 +84,14 @@
             </div> 
             <!-- /sezione chat utenti -->
             <!-- sezione messaggi -->
-            <div class="main">
-                <div>Hai portato il cane a spasso ?</div>
-                <div>Ricordati di stendere i panni</div>
+            <div class="main" v-for="contact in contacts">
+                <div class="received">
+                    <div>{{ contacts[currentIndex].messages[0].message }}</div>
+                    <div>{{ contacts[currentIndex].messages[0].message }}</div>
+                </div>
+                <div class="sent">
+                    <div>{{ contacts[currentIndex].messages[0].message }}</div>
+                </div>
             </div>
             <!-- /sezione messaggi -->
             <div class="footer">
