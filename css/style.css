@@ -40,16 +40,17 @@ body {
     border-right: 1px solid #b1b1b1;
 }
 
+.my-user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .my-user img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     padding: 5px;
-}
-
-.my-user-icon {
-    display: flex;
-    align-items: center;
 }
 
 .notification {
@@ -81,6 +82,11 @@ body {
     display: flex;
 }
 
+.search-bar input {
+    border: none;
+    border-left: 1px solid #e1e1e1;
+}
+
 .nav-bar {
     width: 100%;
 }
@@ -92,18 +98,31 @@ body {
     overflow-y: auto;
 }
 
-.name-friends {
-    flex-grow: 1;
-}
-
-
 .contacts {
     width: 100%;
-    padding: 10px 5px;
     display: flex;
     background-color: #ffffff;
     flex-wrap: wrap;
     list-style: none;
+}
+
+.img-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.img-list-left {
+    display: flex;
+}
+
+.name-friends {
+    flex-grow: 1;
+    padding: 10px 10px;
+}
+
+.name-friends :hover {
+    background-color: #e9ebeb;
 }
 
 .time {
@@ -131,6 +150,7 @@ button {
     border: none;
     padding: 0 5px;
     background: none;
+    cursor: pointer;
 }
 
 .header {
@@ -162,4 +182,11 @@ button {
 .footer i {
     padding: 0 15px;
     color: #6b7376;
+}
+
+.footer input {
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    margin: auto;
 }
