@@ -185,7 +185,7 @@ const app = new Vue({
         },
         addNewMessage() {
             const myMessage = {
-                date: '10/01/2020 15:30:55',
+                date: DateTime.now().toFormat('HH:mm'),
                 message: this.newMessage,
                 status: 'sent'
             }
