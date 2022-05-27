@@ -118,7 +118,7 @@ body {
 
 .name-friends {
     flex-grow: 1;
-    padding: 10px 10px;
+
 }
 
 .name-friends :hover {
@@ -135,6 +135,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    
 }
 
 .users img {
@@ -173,27 +174,30 @@ button {
     flex-grow: 1;
     flex-direction: column;
     padding: 50px 50px;
+    overflow-y: auto;
 }
 
 .received {
     width: 40%;
-    background-color: #d5f9ba;
     border-radius: 10px;
     padding: 20px 20px;
-    justify-items: right;
+    margin: 10px;
 }
 
-.sent {
-    width: 40%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px 20px;
+.status-green {
+    background-color: #d5f9ba;
+    align-self: flex-end;
 }
-  
+
+.status-white {
+    background-color: #ffffff;
+}
+
 .footer {
     background-color: #f3eeea;
     height: 60px;
     display: flex;
+    flex-shrink: 0;
 }
 
 .footer i {

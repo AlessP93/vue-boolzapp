@@ -1,7 +1,10 @@
+var DateTime = luxon.DateTime;
 const app = new Vue({
     el: "#app",
     data: {
         currentIndex: 0,
+        newMessage: '',
+        findLetter: '',
         contacts: [
             {
                 name: 'Michele',
@@ -167,6 +170,46 @@ const app = new Vue({
         ]
     },
     methods: {
-
-    },
+        changeImg(index) {
+            return `img/avatar${index}.jpg`
+        },
+        changeChat(index) {
+            this.currentIndex = index
+        }, 
+        lastMessage(index) {
+           return this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+        },
+        messageHour(contact) {
+            const mess = contact.messages[contact.messages.length - 1];
+            return DateTime.fromFormat(mess.date, "dd/MM/yyyy HH:mm:ss").toFormat('HH:mm');
+        },
+        addNewMessage() {
+            const myMessage = {
+                date: '10/01/2020 15:30:55',
+                message: this.newMessage,
+                status: 'sent'
+            }
+            this.contacts[this.currentIndex].messages.push(myMessage);
+            this.newMessage = "";
+            setTimeout( () => {
+                const reply = {
+                    date: '10/01/2020 15:30:55',
+                    message: "Ok",
+                    status: 'received'
+                }
+                this.contacts[this.currentIndex].messages.push(reply);
+            }, 1000)
+        },
+        searchContact() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                // this.contacts[i]
+                console.log(this.contacts[i]);
+                if (this.contacts[i].name.toLowerCase().includes(this.findLetter.toLowerCase())) {
+                    this.contacts[i].visible = true
+                } else {
+                    this.contacts[i].visible = false
+                }
+            }
+        }
+    }
 });
