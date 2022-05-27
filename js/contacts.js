@@ -194,7 +194,7 @@ const app = new Vue({
             setTimeout( () => {
                 const reply = {
                     date: '10/01/2020 15:30:55',
-                    message: "Ok",
+                    message: "Okay!",
                     status: 'received'
                 }
                 this.contacts[this.currentIndex].messages.push(reply);

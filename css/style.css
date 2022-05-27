@@ -109,7 +109,7 @@ body {
 .img-list {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .img-list-left {
@@ -118,7 +118,6 @@ body {
 
 .name-friends {
     flex-grow: 1;
-
 }
 
 .name-friends :hover {
@@ -128,6 +127,7 @@ body {
 .time {
     display: flex;
     justify-content: right;
+    margin-right: 10px;
 }
 
 .list-chat-users {
