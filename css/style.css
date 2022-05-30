@@ -177,6 +177,11 @@ button {
     overflow-y: auto;
 }
 
+.time-message {
+    font-size: 10px;
+    justify-content: flex-end;
+}
+
 .received {
     width: 40%;
     border-radius: 10px;

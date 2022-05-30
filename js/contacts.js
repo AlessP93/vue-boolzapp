@@ -1,7 +1,7 @@
-var DateTime = luxon.DateTime;
 const app = new Vue({
     el: "#app",
     data: {
+        DateTime: luxon.DateTime,
         currentIndex: 0,
         newMessage: '',
         findLetter: '',
@@ -181,11 +181,11 @@ const app = new Vue({
         },
         messageHour(contact) {
             const mess = contact.messages[contact.messages.length - 1];
-            return DateTime.fromFormat(mess.date, "dd/MM/yyyy HH:mm:ss").toFormat('HH:mm');
+            return this.DateTime.fromFormat(mess.date, "dd/MM/yyyy HH:mm:ss").toFormat('HH:mm');
         },
         addNewMessage() {
             const myMessage = {
-                date: DateTime.now().toFormat('HH:mm'),
+                date: this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -193,7 +193,7 @@ const app = new Vue({
             this.newMessage = "";
             setTimeout( () => {
                 const reply = {
-                    date: '10/01/2020 15:30:55',
+                    date: this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
                     message: "Okay!",
                     status: 'received'
                 }
@@ -210,6 +210,9 @@ const app = new Vue({
                     this.contacts[i].visible = false
                 }
             }
+        },
+        chatMessageDate(dateMex) {
+            return this.DateTime.fromFormat(dateMex, "dd/MM/yyyy HH:mm:ss").toFormat('HH:mm');
         }
     }
 });
